@@ -8,15 +8,25 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var ctx *g = new(g)
+
 type g struct {
 	ginCtx  *gin.Context
 	queries map[string]string
 }
 
-func Context(ctx *gin.Context) *g {
-	return &g{
-		ginCtx: ctx,
+func Context(c *gin.Context) *g {
+	if ctx != nil {
+		ctx = new(g)
 	}
+
+	ctx.ginCtx = c
+
+	return ctx
+}
+
+func GetCtx() *g {
+	return ctx
 }
 
 func (g *g) WithQueries(keys ...string) *g {
@@ -95,4 +105,8 @@ func (g *g) ParseError(err error) bool {
 	}
 
 	return true
+}
+
+func (g *g) Set(key string, val any) {
+	g.ginCtx.Set(key, val)
 }
