@@ -34,6 +34,7 @@ func Api(e *gin.Engine) {
 
 			anomalyPredictionsEp := api.Group("anomaly-predictions")
 			{
+				anomalyPredictionsEp.GET("", handlers.HistoricalAnomalies)
 				anomalyPredictionsEp.GET("/most-recent", handlers.RecentAnomaly)
 				anomalyPredictionsEp.GET("/severity-ratio", handlers.SeverityRatio)
 			}

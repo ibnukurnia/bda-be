@@ -1,7 +1,10 @@
 package anomaly_predictions
 
 import (
+	"msbda/pkg/app"
 	"msbda/src/dtos/responses"
+
+	"github.com/gookit/goutil/dump"
 )
 
 func MostRecentAnomaly() ([]responses.MostRecentAnomaly, error) {
@@ -23,6 +26,10 @@ func MostRecentAnomaly() ([]responses.MostRecentAnomaly, error) {
 			Total: 25,
 		},
 	}
+
+	ctx := app.GetCtx()
+
+	dump.P(ctx.GetQueryIntOrDefault("page", 0))
 
 	return anomalies, nil
 }

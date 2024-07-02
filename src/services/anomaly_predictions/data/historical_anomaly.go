@@ -1,0 +1,173 @@
+package data
+
+import (
+	"msbda/src/dtos/responses"
+
+	"math/rand"
+)
+
+var (
+	Severities                                        = []string{"Minor", "Mayor"}
+	HistoricalAnomalies []responses.HistoricalAnomaly = []responses.HistoricalAnomaly{
+		{
+			Id:           1190,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1191,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1192,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1193,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1194,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1195,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1196,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1197,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1198,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1199,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1200,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1201,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1202,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1203,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1204,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1205,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1206,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1207,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1208,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+		{
+			Id:           1209,
+			ImpactedDate: "11/01/2024 15:04:22 P.M",
+			Severity:     Severities[rand.Intn(2)],
+			Service:      "bridgtl-rsm-notifications",
+			Description:  "A clash occurred while attempting to save n..",
+			TotalAlerts:  rand.Intn(10),
+		},
+	}
+)

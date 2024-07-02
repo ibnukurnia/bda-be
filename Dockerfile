@@ -26,6 +26,8 @@ WORKDIR /www
 COPY --from=builder /build/main /www/
 COPY --from=builder /build/.env /www/
 
-ENV GIN_MODE=release
+# ENV GIN_MODE=release
 
-ENTRYPOINT ["/www/main"]
+EXPOSE 5000
+
+CMD ["./main"]
