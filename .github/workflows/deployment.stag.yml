@@ -43,7 +43,7 @@ jobs:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USER }}
         passphrase: ${{ secrets.PWD }}
-        key: ${{ sectets.SSH_KEY }}
+        key: ${{ secrets.SSH_KEY }}
         script: | 
           whoami
           ls -la
