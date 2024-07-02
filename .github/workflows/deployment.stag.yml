@@ -36,19 +36,22 @@ jobs:
     steps:
     - name: Install SSH client
       run: sudo apt-get update && sudo apt-get install -y openssh-client
-
-    - name: Copy SSH key
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+      
+    - name: Login via SSH
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        passphrase: ${{ secrets.PWD }}
+        key: ${{ sectets.SSH_KEY }}
+        script: | 
+          whoami
+          ls -la
 
     - name: Deploy to VPS
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
           docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
           docker pull ${{ secrets.DOCKER_USER }}/bda-be:latest
           docker stop bda-be || true
           docker rm bda-be || true
           docker run -d --name bda-be -p 5000:8000 ${{ secrets.DOCKER_USER }}/bda-be:latest
-        EOF
