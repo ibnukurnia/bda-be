@@ -1,7 +1,7 @@
 package responses
 
 type Insight struct {
-	EventTriggered   int                `json:"even_triggered"`
+	EventTriggered   int                `json:"event_triggered"`
 	Alerts           int                `json:"total_alerts"`
 	OnGoingSituation int                `json:"on_going_situation"`
 	AvgTimeSolved    int                `json:"avg_time_solved"`
@@ -12,7 +12,7 @@ type TeamOverview struct {
 	Solved     int                     `json:"solved"`
 	OnProgress int                     `json:"on_progress"`
 	TeamMember int                     `json:"team_member"`
-	Overviews  []TeamOverviewSituation `json:"overview"`
+	Overviews  []TeamOverviewSituation `json:"overviews"`
 }
 
 type TeamOverviewSituation struct {

@@ -7,6 +7,8 @@ type HistoricalAnomaly struct {
 	Service      string `json:"service"`
 	Description  string `json:"description"`
 	TotalAlerts  int    `json:"total_alerts"`
+	Status       string `json:"status"`
+	Assignees    string `json:"assignees"`
 }
 
 type MostRecentAnomaly struct {

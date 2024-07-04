@@ -30,9 +30,6 @@ func Insights(c *gin.Context) {
 					{
 						Email: "davin1@bri.co.id",
 					},
-					{
-						Email: "davin2@bri.co.id",
-					},
 				},
 				Service:     "bridgtl-rsm-notifications",
 				Description: "A clash occurred while attempting to save n..",
@@ -47,12 +44,6 @@ func Insights(c *gin.Context) {
 					{
 						Email: "davin@bri.co.id",
 					},
-					{
-						Email: "davin1@bri.co.id",
-					},
-					{
-						Email: "davin2@bri.co.id",
-					},
 				},
 				Service:     "bridgtl-rsm-notifications",
 				Description: "A clash occurred while attempting to save n..",
@@ -63,17 +54,7 @@ func Insights(c *gin.Context) {
 				CreatedDate: "11/01/2024 15:04:22 P.M",
 				Severity:    "minor",
 				Status:      "in progress",
-				Assignees: []responses.SituationRoomAssignee{
-					{
-						Email: "davin@bri.co.id",
-					},
-					{
-						Email: "davin1@bri.co.id",
-					},
-					{
-						Email: "davin2@bri.co.id",
-					},
-				},
+				Assignees:   []responses.SituationRoomAssignee{},
 				Service:     "bridgtl-rsm-notifications",
 				Description: "A clash occurred while attempting to save n..",
 				TotalAlerts: 7,

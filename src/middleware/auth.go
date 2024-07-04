@@ -2,7 +2,8 @@ package middleware
 
 import (
 	"errors"
-	"net/http"
+	"msbda/pkg/app"
+	"msbda/pkg/e"
 	"os"
 	"strings"
 
@@ -13,12 +14,14 @@ import (
 func Auth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		bearer := c.GetHeader("Authorization")
+		appG := app.Context(c)
 
 		if bearer == "" {
-			c.AbortWithStatusJSON(401, gin.H{
-				"message": "unautorized",
-			})
+			appG.Response(401, nil).
+				WithMessage("unautozrized").
+				Send()
 
+			c.Abort()
 			return
 		}
 
@@ -32,19 +35,21 @@ func Auth() gin.HandlerFunc {
 		})
 
 		if err != nil {
-			c.AbortWithStatusJSON(401, gin.H{
-				"message": err.Error(),
-			})
+			appG.Response(401, nil).
+				WithMessage(err.Error()).
+				Send()
 
+			c.Abort()
 			return
 		}
 
 		_, OK := t.Claims.(jwt.MapClaims)
 		if !OK {
-			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
-				"message": "unable to parse claims",
-			})
+			appG.Response(e.ERROR, nil).
+				WithMessage("failed to parse token").
+				Send()
 
+			c.Abort()
 			return
 		}
 

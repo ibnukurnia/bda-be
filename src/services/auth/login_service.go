@@ -32,7 +32,7 @@ func Login(pernr, password string) (*responses.Auth, error) {
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"pernr": pernr,
-		"exp":   time.Now().Add(time.Hour * 24).Unix(),
+		"exp":   time.Now().Add(time.Hour * 2).Unix(),
 	})
 
 	tokenStr, err := token.SignedString([]byte(os.Getenv("APP_KEY")))

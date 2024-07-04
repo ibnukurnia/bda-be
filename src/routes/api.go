@@ -45,6 +45,32 @@ func Api(e *gin.Engine) {
 				overviewsEp.GET("/teams", handlers.TeamOverview)
 				overviewsEp.GET("/services", handlers.ServiceOverview)
 			}
+
+			api.GET("/products", func(ctx *gin.Context) {
+				type s struct {
+					Id   int    `json:"id"`
+					Name string `json:"name"`
+				}
+
+				res := []s{
+					{
+						Id:   1,
+						Name: "product 1",
+					},
+					{
+						Id:   2,
+						Name: "product 2",
+					},
+					{
+						Id:   3,
+						Name: "product 3",
+					},
+				}
+				appG := app.Context(ctx)
+
+				appG.Response(200, res).
+					Send()
+			})
 		}
 	}
 

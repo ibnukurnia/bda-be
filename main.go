@@ -23,6 +23,7 @@ func main() {
 	config.Cors(e, func(c *cors.Config) {
 		c.AllowMethods = []string{"GET", "POST"}
 		c.AllowOrigins = []string{"http://localhost:3000"}
+		c.AllowHeaders = []string{"authorization"}
 	})
 
 	routes.Api(e)
